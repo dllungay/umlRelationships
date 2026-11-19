@@ -5,7 +5,10 @@ class Person:
 
     def get_age(self):
         return self.__age
-        #Reflection: get_age is a simpler and more intuitive way of accessing __age than a lengthy __Person___age.
+        #Reflection: get_age allows for a safer and more controlled way of accessing __age, than directly accessing it.
+        
+    def get_info(self):
+        print(f"Name: {self.name}\n Age: {self.get_age()}")
 
 class Student(Person):
     def __init__(self, name, age):
@@ -25,10 +28,10 @@ person1 = Person("Lina", 20)
 student1 = Student("Lina", 20)
 teacher1 = Teacher("Mona", 30)
 
-print(f"Name: {person1.name}\n Age: {person1.get_age()}")
+person1.get_info()
 print("")
-print(f"Name: {student1.name}\n Age: {student1.get_age()}")
+student1.get_info()
 student1.study()
 print("")
-print(f"Name: {teacher1.name}\n Age: {teacher1.get_age()}")
+teacher1.get_info()
 teacher1.teach()
