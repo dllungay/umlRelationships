@@ -7,6 +7,15 @@ class Person:
         return self.__age
         #Reflection: get_age is a simpler and more intuitive way of accessing __age than a lengthy __Person___age.
 
+class Student(Person):
+    def __init__(self, name, age):
+        super().__init__(name, age)
+
+    def study(self):
+        print(f"{self.name} is studying.")
+
 person1 = Person("Lina", 20)
+student1 = Student("Lina", 20)
 
 print(f"Name: {person1.name}\n Age: {person1.get_age()}")
+student1.study()
